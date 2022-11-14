@@ -1,0 +1,151 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+body {
+  background-color: #202124;
+}
+
+/* Cabeçalho */
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#search-input {
+  background-color: #525356;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: #ddd;
+  width: 400px;
+}
+
+#search::placeholder {
+  color: #ddd;
+}
+
+#export-notes {
+  background-color: #333;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#export-notes:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Form de nova nota */
+#add-note-container {
+  display: flex;
+  width: 400px;
+  margin: 1rem auto 0;
+  gap: 1rem;
+}
+
+#add-note-container input,
+#add-note-container button {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#add-note-container input {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #525356;
+  color: #fff;
+}
+
+#add-note-container button {
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Notas */
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.note {
+  min-height: 200px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background-color: #202124;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+}
+
+.note textarea {
+  background-color: transparent;
+  resize: none;
+  color: #fff;
+  border: none;
+  height: 100%;
+  outline: none;
+}
+
+.note .bi-pin {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.note:hover > i {
+  opacity: 1;
+}
+
+.note .bi-x-lg,
+.note .bi-file-earmark-plus {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px;
+  color: #555;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.note .bi-file-earmark-plus {
+  top: 40px;
+}
+
+.note .bi-x-lg:hover,
+.note .bi-file-earmark-plus:hover {
+  color: #fff;
+}
+
+.note.fixed {
+  background-color: #3c3c3f;
+}
